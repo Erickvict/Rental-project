@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="min-h-screen bg-slate-100 py-10 px-4">
+    <div class="max-w-xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div class="bg-cyan-500 text-white px-6 py-6 text-center">
+          <h1 class="text-3xl font-bold">Payment</h1>
+
+          <p class="text-cyan-100 mt-2">Complete your vehicle rental payment</p>
+        </div>
+
+        <div class="p-6">
+          <div class="flex justify-between border-b pb-4 mb-5">
+            <span class="text-gray-500">Order Number</span>
+
+            <span class="font-semibold text-gray-800">{{ order.order_number }}</span>
+          </div>
+
+          <div class="flex justify-between items-center mb-8">
+            <span class="text-lg font-semibold text-gray-700">Total Amount</span>
+
+            <span class="text-3xl font-bold text-cyan-600">₹{{ order.total_amount }}</span>
+          </div>
+
+          <div class="border rounded-xl p-5 mb-6">
+            <div class="flex items-center gap-4">
+              <div class="text-3xl">💳</div>
+
+              <div>
+                <h2 class="font-bold text-gray-800">Razorpay</h2>
+
+                <p class="text-sm text-gray-500">Secure online payment</p>
+              </div>
+            </div>
+          </div>
+
+          <form method="POST" action="{% url 'payment_success' order_id=order.id %}">
+            {% csrf_token %}
+
+            <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition">Pay ₹{{ order.total_amount }}</button>
+          </form>
+
+          <a href="{% url 'order_review' order_id=order.id %}" class="block text-center mt-4 text-gray-500 hover:text-gray-700">← Back to Booking</a>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mt-5">🔒 Your payment information is secure.</p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+
+<section class="border-b border-stone-200 py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <span class="font-mono text-xs tracking-widest uppercase text-amber-600 mb-3 inline-block">Contact — Booking Support</span>
+    <h1 class="font-serif font-medium text-5xl leading-tight max-w-2xl mb-4">Tell us what you need, and we'll route it to the right desk.</h1>
+    <p class="max-w-lg text-stone-500 text-lg">Questions about a reservation, a change to an existing booking, or something else entirely — the form below reaches our support team directly, usually within one business day.</p>
+  </div>
+</section>
+
+<main class="max-w-5xl mx-auto px-6 py-16">
+  <div class="grid grid-cols-2 gap-12 items-start">
+
+    
+    <div>
+      <div class="flex flex-col gap-4">
+        <div class="bg-white border border-stone-200 rounded p-5 flex gap-4 items-start">
+          <span class="font-mono text-amber-600 text-sm pt-0.5">01</span>
+          <div>
+            <h3 class="font-serif font-semibold text-lg mb-1">Existing booking</h3>
+            <p class="text-stone-500 text-sm">Change dates, cancel, or ask about a confirmation number.</p>
+            <a href="abc@gmail.com" class="inline-block mt-2 text-sm text-teal-800 border-b border-teal-800">abc@gmail.com</a>
+          </div>
+        </div>
+        <div class="bg-white border border-stone-200 rounded p-5 flex gap-4 items-start">
+          <span class="font-mono text-amber-600 text-sm pt-0.5">02</span>
+          <div>
+            <h3 class="font-serif font-semibold text-lg mb-1">New reservation help</h3>
+            <p class="text-stone-500 text-sm">Not sure which unit fits your dates or group size — ask before you book.</p>
+            <a href="abc@gmail.com" class="inline-block mt-2 text-sm text-teal-800 border-b border-teal-800">abc@gmail.com</a>
+          </div>
+        </div>
+        <div class="bg-white border border-stone-200 rounded p-5 flex gap-4 items-start">
+          <span class="font-mono text-amber-600 text-sm pt-0.5">03</span>
+          <div>
+            <h3 class="font-serif font-semibold text-lg mb-1">List your property</h3>
+            <p class="text-stone-500 text-sm">Owners and partners looking to add a listing to the platform.</p>
+            <a href="abc@gmail.com" class="inline-block mt-2 text-sm text-teal-800 border-b border-teal-800">abc@gmail.com</a>
+          </div>
+        </div>
+        <div class="bg-white border border-stone-200 rounded p-5 flex gap-4 items-start">
+          <span class="font-mono text-amber-600 text-sm pt-0.5">04</span>
+          <div>
+            <h3 class="font-serif font-semibold text-lg mb-1">Urgent, on-site issue</h3>
+            <p class="text-stone-500 text-sm">Locked out, no hot water, or another problem during a stay.</p>
+            <a href="tel:+18005551234" class="inline-block mt-2 text-sm text-teal-800 border-b border-teal-800">+91-9089786543</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-teal-900 text-white rounded p-6" id="hours">
+        <h3 class="font-serif font-medium text-lg mb-3">Support desk hours</h3>
+        <div class="flex justify-between text-sm py-1.5 border-b border-white/10">
+          <span class="text-white/70">Mon – Fri</span><span>7:00 AM – 9:00 PM</span>
+        </div>
+        <div class="flex justify-between text-sm py-1.5 border-b border-white/10">
+          <span class="text-white/70">Saturday</span><span>8:00 AM – 6:00 PM</span>
+        </div>
+        <div class="flex justify-between text-sm py-1.5 border-b border-white/10">
+          <span class="text-white/70">Sunday</span><span>9:00 AM – 4:00 PM</span>
+        </div>
+        <div class="flex justify-between text-sm py-1.5">
+          <span class="text-white/70">Urgent line</span><span>24 / 7</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="bg-white border border-stone-200 rounded-md p-9" id="form">
+      <div class="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-4 mb-6">
+        <h2 class="font-serif font-semibold text-2xl">Send a message</h2>
+        <span class="font-mono text-xs text-stone-400">FORM · CTC-01</span>
+      </div>
+      <form action="#" method="post">
+        <div class="grid grid-cols-2 gap-4 mb-1">
+          <div class="mb-4">
+            <label for="name" class="block font-mono text-xs text-stone-500 mb-1.5">Full name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" class="w-full text-base px-3 py-2.5 border border-stone-200 rounded bg-stone-50">
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block font-mono text-xs text-stone-500 mb-1.5">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" class="w-full text-base px-3 py-2.5 border border-stone-200 rounded bg-stone-50">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label for="booking" class="block font-mono text-xs text-stone-500 mb-1.5">Booking reference (optional)</label>
+            <input type="text" id="booking" name="booking" placeholder="e.g. KL-48213" class="w-full text-base px-3 py-2.5 border border-stone-200 rounded bg-stone-50">
+          </div>
+          <div class="mb-4">
+            <label for="topic" class="block font-mono text-xs text-stone-500 mb-1.5">This is about</label>
+            <select id="topic" name="topic" required class="w-full text-base px-3 py-2.5 border border-stone-200 rounded bg-stone-50">
+              <option value="" disabled selected>Choose one</option>
+              <option>Existing booking</option>
+              <option>New reservation</option>
+              <option>Listing a property</option>
+              <option>Billing or refund</option>
+              <option>Something else</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block font-mono text-xs text-stone-500 mb-1.5">Message</label>
+          <textarea id="message" name="message" required placeholder="Let us know what's going on..." class="w-full text-base px-3 py-2.5 border border-stone-200 rounded bg-stone-50 min-h-28"></textarea>
+        </div>
+
+        <div class="flex items-center justify-between mt-6 gap-4">
+          <button type="submit" class="bg-teal-900 text-white px-6 py-3 rounded font-medium text-sm">Send message</button>
+          <p class="text-xs text-stone-500 max-w-xs">We'll only use these details to respond to your message.</p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+ 
+  <div class="mt-20 border-t border-stone-200 pt-11" id="faq">
+    <h2 class="font-serif font-medium text-3xl mb-6">Before you write in</h2>
+
+    <details class="border-b border-stone-200 py-4">
+      <summary class="cursor-pointer font-medium text-base">How long until I hear back?</summary>
+      <p class="text-stone-500 text-sm mt-3 max-w-xl">Most messages get a reply within one business day. Urgent, on-site issues during an active stay should go to the 24/7 line instead of the form.</p>
+    </details>
+
+    <details class="border-b border-stone-200 py-4">
+      <summary class="cursor-pointer font-medium text-base">Can I change my booking dates myself?</summary>
+      <p class="text-stone-500 text-sm mt-3 max-w-xl">Yes — date changes on upcoming stays can be made from your account under "My bookings," subject to the property's change policy. Use the form only if the option isn't available online.</p>
+    </details>
+
+    <details class="border-b border-stone-200 py-4">
+      <summary class="cursor-pointer font-medium text-base">What should I include for a refund request?</summary>
+      <p class="text-stone-500 text-sm mt-3 max-w-xl">Your booking reference, the dates involved, and a short description of what happened. This lets us look into it without a back-and-forth.</p>
+    </details>
+
+    <details class="border-b border-stone-200 py-4">
+      <summary class="cursor-pointer font-medium text-base">I want to list my property — where do I start?</summary>
+      <p class="text-stone-500 text-sm mt-3 max-w-xl">Send a note to the partners address with your property's location, type, and rough availability, and the onboarding team will follow up with next steps.</p>
+    </details>
+  </div>
+</main>
+
+
+{% endblock %}

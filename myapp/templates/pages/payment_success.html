@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="min-h-screen bg-slate-100 flex items-center justify-center px-4">
+
+    <div class="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
+
+        <div class="text-6xl mb-4">
+            ✓
+        </div>
+
+        <h1 class="text-3xl font-bold text-green-600">
+            Payment Completed!
+        </h1>
+
+        <p class="text-gray-600 mt-3">
+            Your vehicle booking has been successfully confirmed.
+        </p>
+
+        <div class="bg-gray-50 rounded-xl p-5 mt-6 text-left">
+
+            <div class="flex justify-between mb-3">
+                <span class="text-gray-500">
+                    Order Number
+                </span>
+
+                <span class="font-semibold">
+                    {{ order.order_number }}
+                </span>
+            </div>
+
+            <div class="flex justify-between">
+                <span class="text-gray-500">
+                    Amount Paid
+                </span>
+
+                <span class="font-bold text-cyan-600">
+                    ₹{{ order.total_amount }}
+                </span>
+            </div>
+
+        </div>
+
+        <p class="text-gray-500 text-sm mt-6">
+            Your booking confirmation will be sent to your registered email address.
+        </p>
+
+        <a href="#"
+           class="block mt-6 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg">
+            View My Orders
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

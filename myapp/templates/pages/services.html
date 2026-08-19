@@ -1,0 +1,110 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-10">
+    <div class="container mx-auto px-6 lg:px-16">
+
+      <h1 class="text-4xl font-bold text-blue-600 mb-8 text-center">
+        Our Services
+      </h1>
+
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Daily Rentals</h2>
+          <p class="text-gray-600">
+            Flexible daily car rentals for all your short-term travel needs.
+          </p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Weekly & Monthly Rentals</h2>
+          <p class="text-gray-600">
+            Affordable long-term rental options for extended use.
+          </p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Luxury Car Rentals</h2>
+          <p class="text-gray-600">
+            Rent premium cars for weddings, parties, or business events.
+          </p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Airport Transfers</h2>
+          <p class="text-gray-600">
+            Hassle-free airport pickups and drop-offs, on time, every time.
+          </p>
+        </div>
+      </div>
+
+    
+      <div class="mt-20">
+        <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">
+          Explore Our Services
+        </h2>
+
+        <div class="flex flex-wrap justify-center gap-8">
+
+          <div class="service-img-card fade-up delay-1 relative w-full sm:w-72 rounded-xl overflow-hidden shadow-lg bg-white">
+            <div class="h-48 overflow-hidden">
+              <img src="{% static 'images/car12.png'%}"
+                   alt="Daily rental car"
+                   class="w-full h-full object-cover" />
+            </div>
+            <div class="overlay absolute inset-0 top-0 h-48 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Daily Rentals</h3>
+              <p class="text-gray-600 text-sm">
+                Grab a car for a day trip or a quick errand — quick pickup, easy return.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-img-card fade-up delay-2 relative w-full sm:w-72 rounded-xl overflow-hidden shadow-lg bg-white">
+            <div class="h-48 overflow-hidden">
+              <img src="{% static "images/bike14.png"%}"
+                   alt="Weekly and monthly rental car"
+                   class="w-full h-full object-cover" />
+            </div>
+            <div class="overlay absolute inset-0 top-0 h-48 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Weekly & Monthly</h3>
+              <p class="text-gray-600 text-sm">
+                Long-term rentals at rates that make sense for extended stays.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-img-card fade-up delay-3 relative w-full sm:w-72 rounded-xl overflow-hidden shadow-lg bg-white">
+            <div class="h-48 overflow-hidden">
+              <img src="{% static "images/car1.png"%}"
+                   alt="Luxury rental car"
+                   class="w-full h-full object-cover" />
+            </div>
+            <div class="overlay absolute inset-0 top-0 h-48 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Luxury Rentals</h3>
+              <p class="text-gray-600 text-sm">
+                Arrive in style for weddings, business events, or a night out.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-img-card fade-up delay-4 relative w-full sm:w-72 rounded-xl overflow-hidden shadow-lg bg-white">
+            <div class="h-48 overflow-hidden">
+              <img src="{% static "images/bike2.png"%}"
+                   alt="Airport transfer car"
+                   class="w-full h-full object-cover" />
+            </div>
+            <div class="overlay absolute inset-0 top-0 h-48 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Airport Transfers</h3>
+              <p class="text-gray-600 text-sm">
+                On-time pickups and drop-offs so you never miss a flight.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+{% endblock %}
+    

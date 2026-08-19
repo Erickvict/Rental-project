@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="hero-container">
+    <div class="hero-text">
+      <h1>
+        Easy and
+        <span>Fast Way</span>
+        to Rent your Car/Bike
+      </h1>
+      <a href="{% url 'signup' %}"><button class="book-btn">Book Now</button></a>
+    </div>
+    <div class="hero-image wrapper">
+      <img src="{% static 'images/carmain.jpg' %}" alt="car" />
+    </div>
+  </section>
+
+  <div class="flex items-center justify-center card">
+    <div class="relative flex items-center gap-5 p-8 rounded-xl border border-gray-300 shadow-xl bg-cover bg-center" style="background-image: url('{% static 'images/bike7.png' %}')">
+      <div class="absolute inset-0 bg-black/50 rounded-xl"></div>
+
+      <div class="relative flex items-center gap-5">
+        <div class="flex flex-col">
+          <label class="text-white font-semibold mb-2">Pickup Location</label>
+
+          <input type="text" placeholder="Enter location" class="px-4 py-2 rounded-lg border" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="text-white font-semibold mb-2">Pickup Date</label>
+
+          <input type="date" class="px-4 py-2 rounded-lg border" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="text-white font-semibold mb-2">Drop Off Date</label>
+
+          <input type="date" class="px-4 py-2 rounded-lg border" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="text-white font-semibold mb-2">Drop Off Time</label>
+
+          <input type="time" class="px-4 py-2 rounded-lg border" />
+        </div>
+
+        <div class="mt-7">
+          <a href="{% url 'signup' %}"><button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">View Vehicle</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="inventory card">
+    <h2 class="font-bold text-2xl">Latest Inventory</h2>
+    <div class="card-container">
+      <div class="product-card wrapper">
+        <img src="{% static 'images/bike13.png' %}" />
+        <div class="card-content">
+          <p>Enjoy unmatched agility with lightweight frames designed for smooth handling and maneuverability.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+      <div class="product-card wrapper">
+        <img src="{% static 'images/car13.jpg' %}" />
+        <div class="card-content">
+          <p>Enjoy unmatched agility with lightweight frames designed for smooth handling and maneuverability.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+      <div class="product-card wrapper">
+        <img src="{% static 'images/bike4.png' %}" />
+        <div class="card-content">
+          <p>Enjoy unmatched agility with lightweight frames designed for smooth handling and maneuverability.</p>
+          <a href="{% url 'signup' %}" class="buy-now-button">Buy Now</a>
+        </div>
+      </div>
+      <div class="product-card wrapper">
+        <img src="{% static 'images/car15.png' %}" />
+        <div class="card-content">
+          <p>Enjoy unmatched agility with lightweight frames designed for smooth handling and maneuverability.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+      <div class="product-card wrapper">
+        <img src="{% static 'images/bike3.png' %}" />
+        <div class="card-content">
+          <p>Enjoy unmatched agility with lightweight frames designed for smooth handling and maneuverability.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+      <div class="product-card wrapper">
+        <img src="{% static 'images/car1.png' %}" />
+        <div class="card-content">
+          <p>Enjoy unmatched agility with lightweight frames designed for smooth handling and maneuverability.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+
+      <div class="product-card wrapper">
+        <img src="{% static 'images/car3.png' %}" />
+        <div class="card-content">
+          <p>Provide a high level of comfort premium materials and spacious interiors to serene driving experience.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+
+      <div class="product-card wrapper">
+        <img src="{% static 'images/bike5.png' %}" />
+        <div class="card-content">
+          <p>Efficient systems like fuel injection, lightweight and optimized engine fuel economy without compromising power.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+
+      <div class="product-card wrapper">
+        <img src="{% static 'images/car7.png' %}" />
+        <div class="card-content">
+          <p>Enjoy smooth rides on all terrains with advanced suspension systems for superior stability and handling.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+
+      <div class="product-card wrapper">
+        <img src="{% static 'images/bike6.png' %}" />
+        <div class="card-content">
+          <p>Eco-Friendly Options: Reduce emissions with electric bikes offering quiet performance and sustainable energy.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+
+      <div class="product-card wrapper">
+        <img src="{% static 'images/car4.png' %}" />
+        <div class="card-content">
+          <p>Advanced assistance systems such as adaptive cruise control, automatic emergency braking.</p>
+          <a href="{% url 'signup' %}"><p class="buy-now-button">Buy Now</p></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex items-center justify-center mt-16 mb-16 card">
+    <div class="bg-white shadow-lg rounded-xl p-6 flex items-center gap-6 w-[80%]">
+      <h3 class="text-xl font-bold text-gray-800 whitespace-nowrap">Get Exclusive Deals</h3>
+
+      <input type="email" placeholder="Enter your email" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <p class="text-sm text-gray-500 whitespace-nowrap cursor-pointer hover:text-blue-600">Privacy Policy</p>
+
+      <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Signup</button>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="section-title">Why <span style="color: red">Choose Us</span></h2>
+    <div class="features-container card">
+      <div class="feature">
+        <div class="phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.502a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.503-2.877z" />
+          </svg>
+        </div>
+        <h3>24 Hour Support</h3>
+      </div>
+      <div class="feature">
+        <div class="phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476z" />
+          </svg>
+        </div>
+        <h3>Best Price</h3>
+      </div>
+      <div class="feature">
+        <div class="phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.507L5.354 7.854a.5.5 0 1 1-.508-.508l3-3a.5.5 0 0 1 .508 0l3 3a.5.5 0 0 1-.508.508L8.5 5.507z" />
+          </svg>
+        </div>
+        <h3>Verified License</h3>
+      </div>
+      <div class="feature">
+        <div class="phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.508.508L7.293 8l-2.647 2.646a.5.5 0 0 0 .508.508L8 8.507l2.646 2.647a.5.5 0 0 0 .508-.508L8.507 8l2.647-2.646a.5.5 0 0 0-.508-.508L8 7.293z" />
+          </svg>
+        </div>
+        <h3>Cancellation Free</h3>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title"><span style="color: red">Achievements</span></h2>
+    <div class="achievement-container card">
+      <div class="achievement">
+        <h3>4000+</h3>
+        <h5>Active Member</h5>
+      </div>
+      <div class="achievement">
+        <h3>3000+</h3>
+        <h5>Car Colors</h5>
+      </div>
+      <div class="achievement">
+        <h3>6000+</h3>
+        <h5>Car Models</h5>
+      </div>
+      <div class="achievement">
+        <h3>3000+</h3>
+        <h5>10K Positive Rating</h5>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white px-8 py-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-3">
+        <h2 class="text-lg font-bold mb-4">Get to know us</h2>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">About Rentora</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Careers</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Press Releases</p>
+      </div>
+
+      <div class="p-3">
+        <h2 class="text-lg font-bold mb-4">Connect with us</h2>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Facebook</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Instagram</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">What's up</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Twitter</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">YouTube</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Telegram</p>
+      </div>
+
+      <div class="p-3">
+        <h2 class="text-lg font-bold mb-4">Support</h2>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Help Center</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Contact Us</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Returns & Refunds</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Customer Support</p>
+      </div>
+
+      <div class="p-3">
+        <h2 class="text-lg font-bold mb-4">Let us help you</h2>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Payment Help</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Cancellation Policy</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">Customer Support</p>
+
+        <p class="my-2 cursor-pointer hover:text-orange-400 transition">FAQs</p>
+      </div>
+    </div>
+
+    <div class="text-center border-t border-gray-700 mt-8 pt-4 text-sm text-gray-300">© 2026 Rentora Company. All Rights Reserved.</div>
+  </footer>
+{% endblock %}

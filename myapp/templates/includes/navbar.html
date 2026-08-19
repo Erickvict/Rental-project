@@ -1,0 +1,118 @@
+<nav class="bg-cyan-500 sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-3 items-center h-16">
+
+      {% comment %} logo {% endcomment %}
+      <div class="flex items-center">
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          class="h-5 w-5 fill-white"
+          aria-hidden="true"
+        >
+          <path
+            d="M499.99 176h-59.87l-16.64-41.6C406.98 91.63 365.61 64 319.5 64h-127c-46.11 0-87.48 27.63-104 70.4L71.87 176H12.01C4.2 176-1.53 183.34.37 190.91l6 24C7.7 220.25 12.5 224 18.01 224h20.07C24.65 235.73 16 252.78 16 272v48c0 16.12 6.16 30.67 16 41.93V416c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h256v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-54.07c9.84-11.25 16-25.8 16-41.93v-48c0-19.22-8.65-36.27-22.07-48H494c5.5 0 10.31-3.75 11.64-9.09l6-24c1.89-7.57-3.84-14.91-11.65-14.91z"
+          />
+        </svg>
+
+        <span class="text-white text-xl font-bold ml-2">
+          Rentora
+        </span>
+
+      </div>
+
+
+      {% comment %} center {% endcomment %}
+      <div class="flex justify-center">
+
+        {% if not user.is_authenticated %}
+
+          <div class="flex space-x-6">
+
+            <a
+              href="/"
+              class="text-white hover:text-yellow-200 font-medium"
+            >
+              Home
+            </a>
+
+            <a
+              href="/services/"
+              class="text-white hover:text-yellow-200 font-medium"
+            >
+              Services
+            </a>
+
+            <a
+              href="/contact/"
+              class="text-white hover:text-yellow-200 font-medium"
+            >
+              Contact
+            </a>
+
+          </div>
+
+        {% endif %}
+
+      </div>
+
+
+      {% comment %} right {% endcomment %}
+      <div class="flex justify-end items-center space-x-2">
+
+        {% if user.is_authenticated %}
+
+          {% comment %} loggedin {% endcomment %}
+
+          <button
+            class="px-4 py-1 border border-yellow-300 text-white rounded hover:bg-yellow-400 hover:text-black"
+          >
+            Hello 👋 {{ user.username }}
+          </button>
+
+          <a href="{% url 'cart' %}">
+          <button
+            class="px-4 py-1 border border-yellow-300 text-white rounded hover:bg-yellow-400 hover:text-black"
+          >
+            Cart
+          </button>
+          </a>
+          <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+
+            <button
+              class="px-4 py-1 border border-yellow-300 text-white rounded hover:bg-yellow-400 hover:text-black"
+            >
+              Logout
+            </button>
+          </form>
+
+        {% else %}
+
+          {% comment %} not logged in {% endcomment %}
+
+          <a href="{% url 'login'%}">
+            <button
+              class="px-4 py-1 border border-yellow-300 text-white rounded hover:bg-yellow-400 hover:text-black"
+            >
+              Login
+            </button>
+          </a>
+
+          <a href="{% url 'signup'%}">
+            <button
+              class="px-4 py-1 border border-yellow-300 text-white rounded hover:bg-yellow-400 hover:text-black"
+            >
+              SignUp
+            </button>
+          </a>
+
+        {% endif %}
+
+      </div>
+
+    </div>
+  </div>
+</nav>

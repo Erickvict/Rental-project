@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <div class="min-h-screen bg-slate-100 py-10 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Review Your Booking</h1>
+
+        <p class="text-gray-500 mt-2">Please check your booking details before proceeding to payment.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div class="bg-cyan-500 px-6 py-5 text-white">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <div>
+              <p class="text-sm text-cyan-100">Order Number</p>
+
+              <h2 class="text-xl font-bold">{{ order.order_number }}</h2>
+            </div>
+
+            <div class="text-left sm:text-right">
+              <p class="text-sm text-cyan-100">Order Status</p>
+
+              <span class="inline-block mt-1 bg-white text-cyan-600 px-3 py-1 rounded-full text-sm font-semibold">{{ order.get_order_status_display }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 border-b">
+          <h2 class="text-xl font-bold text-gray-800 mb-5">Customer Details</h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <p class="text-sm text-gray-500">Full Name</p>
+
+              <p class="font-semibold text-gray-800 mt-1">{{ booking.full_name }}</p>
+            </div>
+
+            <div>
+              <p class="text-sm text-gray-500">Email</p>
+
+              <p class="font-semibold text-gray-800 mt-1 break-words">{{ booking.email }}</p>
+            </div>
+
+            <div>
+              <p class="text-sm text-gray-500">Phone Number</p>
+
+              <p class="font-semibold text-gray-800 mt-1">{{ booking.phone_number }}</p>
+            </div>
+
+            <div>
+              <p class="text-sm text-gray-500">Location</p>
+
+              <p class="font-semibold text-gray-800 mt-1">{{ booking.location }}</p>
+            </div>
+
+            <div class="sm:col-span-2">
+              <p class="text-sm text-gray-500">Address</p>
+
+              <p class="font-semibold text-gray-800 mt-1">{{ booking.address }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 border-b">
+          <h2 class="text-xl font-bold text-gray-800 mb-5">Rental Details</h2>
+
+          {% for item in order.items.all %}
+            <div class="border border-gray-200 rounded-xl p-5 mb-4">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <h3 class="text-lg font-bold text-gray-800">{{ item.vehicle_name }}</h3>
+
+                  <span class="inline-block mt-2 bg-cyan-50 text-cyan-600 px-3 py-1 rounded-full text-sm font-medium">{{ item.get_plan_display }}</span>
+                </div>
+
+                <div class="text-left sm:text-right">
+                  <p class="text-sm text-gray-500">Subtotal</p>
+
+                  <p class="text-xl font-bold text-cyan-600">₹{{ item.subtotal }}</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-5 pt-4 border-t">
+                {% if item.plan == 'hourly' %}
+                  <div>
+                    <p class="text-xs text-gray-500">Hours</p>
+
+                    <p class="font-semibold text-gray-800">{{ item.hours }}</p>
+                  </div>
+                {% endif %}
+
+                <div>
+                  <p class="text-xs text-gray-500">Quantity</p>
+
+                  <p class="font-semibold text-gray-800">{{ item.quantity }}</p>
+                </div>
+
+                <div>
+                  <p class="text-xs text-gray-500">Price</p>
+
+                  <p class="font-semibold text-gray-800">₹{{ item.price }}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="p-6 border-b">
+          <h2 class="text-xl font-bold text-gray-800 mb-5">Rental Period</h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="bg-gray-50 rounded-xl p-4">
+              <p class="text-sm text-gray-500">Rental Start</p>
+
+              <p class="font-semibold text-gray-800 mt-1">{{ booking.rental_start }}</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-4">
+              <p class="text-sm text-gray-500">Rental End</p>
+
+              <p class="font-semibold text-gray-800 mt-1">{{ booking.rental_end }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-gray-50">
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-700">Total Amount</span>
+
+            <span class="text-3xl font-bold text-cyan-600">₹{{ order.total_amount }}</span>
+          </div>
+        </div>
+
+        <div class="p-6">
+          <div class="flex flex-col sm:flex-row justify-between gap-4">
+            <a href="{% url 'cart' %}" class="w-full sm:w-auto text-center bg-gray-500 hover:bg-gray-600 text-white px-7 py-3 rounded-lg font-semibold transition">← Back</a>
+
+            <a href="{% url 'payment' order.id %}" class="w-full sm:w-auto text-center bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-md">Proceed to Payment →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mt-5">🔒 Your booking details are secure.</p>
+    </div>
+  </div>
+{% endblock %}
