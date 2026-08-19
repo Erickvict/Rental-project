@@ -1,0 +1,1 @@
+web: gunicorn rentalcar.wsgi:application
