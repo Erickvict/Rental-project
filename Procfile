@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn rentalcar.wsgi
+web: python manage.py migrate && gunicorn rentalcar.wsgi:application
